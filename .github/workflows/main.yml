@@ -1,7 +1,10 @@
 on: push
 name: 🚀 Deploy website on push
 jobs:
-  build:
+  build-deploy:
+    name: 🎉 Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
     - name: Cache Composer dependencies
       uses: actions/cache@v3
       with:
@@ -12,10 +15,6 @@ jobs:
       with:
         php_version: "8.1"
         version: 1
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
     
