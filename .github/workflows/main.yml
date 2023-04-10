@@ -5,6 +5,8 @@ jobs:
     name: 🎉 Build and Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
     - name: Cache Composer dependencies
       uses: actions/cache@v3
       with:
@@ -14,10 +16,7 @@ jobs:
       uses: php-actions/composer@v6
       with:
         php_version: "8.1"
-        version: 1
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-    
+        version: 1    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
