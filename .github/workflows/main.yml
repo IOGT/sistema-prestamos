@@ -15,7 +15,7 @@ jobs:
     - name: Install dependencies
       uses: php-actions/composer@v6
       with:
-        php_version: "8.1"
+        php_version: "7.0"
         version: 1    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
